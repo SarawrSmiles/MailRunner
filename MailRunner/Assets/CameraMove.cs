@@ -19,13 +19,19 @@ public class CameraMove : MonoBehaviour {
 		if (emeter.transform.localScale.y <= 0.001) {
 						speed = 0.1F;
 		} else {
-			speed = emeter.transform.localScale.y * 3;
+			speed = emeter.transform.localScale.y * 4F;
 		}
 		if (Input.GetKey(KeyCode.W)) {
 			transform.localPosition += new Vector3(0, 0, 1F * speed);
 		}
 		if (Input.GetKey (KeyCode.S)) {
-			transform.localPosition += new Vector3(0, 0, 1F * speed );
+			transform.localPosition += new Vector3(0, 0, -1F * speed );
+		}
+		if (Input.GetKey(KeyCode.A)) {
+			transform.localPosition += new Vector3(-1F * speed, 0, 0);
+		}
+		if (Input.GetKey (KeyCode.D)) {
+			transform.localPosition += new Vector3(1F * speed, 0, 0);
 		}
 	}
 }
